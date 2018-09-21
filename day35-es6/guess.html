@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Guess Game</title>
+    </head>
+    <body>
+        <script>
+            const name = prompt('Enter your name:');
+            console.log('Welcome to the guess game ' + name);
+            // TargetNumber - pascal case
+            // target_number - snake case - class names
+            // targetNumber - camel case - in js for variables and functions
+            const targetNumber = Math.ceil(Math.random() * 100);
+            console.log(targetNumber);
+            const maxGuess = 10; 
+            let playerGuess = 0;    // let continues to 
+            // for(let i = 0; i < maxGuess; i++) {
+            for(; palyerGuess < maxGuess; playerGuess++) {
+                let guess = prompt('Guess the number');
+                if(guess < targetNumber) {
+                    console.log('Oops. Your guess was low.');
+                } else if(guess > targetNumber) {
+                    console.log('Oops. Your guess was high.');
+                } else if(guess == targetNumber) {
+                    console.log('Good Job ' + name + '. You have guessed the number.');
+                    break;
+                }
+                // console.log(i);
+            }
+            // if(i === maxGuess) {
+            if(playerGuess === maxGuess) {
+                console.log('Sorry. You didn\'t get my number. My number is ' + targetNumber + '.');
+            }
+        </script>
+    </body>
+</html>

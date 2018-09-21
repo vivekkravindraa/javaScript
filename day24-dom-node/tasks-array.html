@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tasks Array</title>
+</head>
+<body>
+    <h2> My Tasks </h2>
+    <ul id="myTasks"> 
+    </ul>
+    <button id="myBtn">Show Me Tasks</button>
+        <script>
+            var tasks = ['watching a movie','catching up with friends','try the new restaurant'];
+
+            var myTasksHandle = document.getElementById('myTasks');
+            var myBtnHandle = document.getElementById('myBtn');
+            
+            myBtnHandle.addEventListener('click',function() {
+                tasks.forEach(function(task) {
+                    var li = document.createElement('li');
+                    var text = document.createTextNode(task);
+                    li.appendChild(text);
+                    myTasksHandle.appendChild(li);
+                });
+            },false);
+        </script>
+</body>
+</html>

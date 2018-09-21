@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>JSONPlaceHolder User Table</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        
+        var appHandle = document.getElementById('app');
+
+        axios.get(`https://jsonplaceholder.typicode.com/users`)
+        
+        .then(function(response) {
+
+            var users = response.data;
+
+            var table = document.createElement('table');
+            table.setAttribute('border','1');
+            var thead = document.createElement('thead');
+            var tbody = document.createElement('tbody');
+
+            var tr = document.createElement('tr');
+            var th1 = document.createElement('th');
+            var th2 = document.createElement('th');
+            var th3 = document.createElement('th');
+            var th4 = document.createElement('th');
+            var th5 = document.createElement('th');
+            var th6 = document.createElement('th');
+            var th7 = document.createElement('th');
+            var th8 = document.createElement('th');
+            var th9 = document.createElement('th');
+
+            var thText1 = document.createTextNode('Sl. No');
+            var thText2 = document.createTextNode('Name');
+            var thText3 = document.createTextNode('Username');
+            var thText4 = document.createTextNode('Email');
+            var thText5 = document.createTextNode('Address');
+            var thText6 = document.createTextNode('Zipcode');
+            var thText7 = document.createTextNode('Phone');
+            var thText8 = document.createTextNode('Website');
+            var thText9 = document.createTextNode('Company Name');
+            
+            th1.appendChild(thText1);
+            th2.appendChild(thText2);
+            th3.appendChild(thText3);
+            th4.appendChild(thText4);
+            th5.appendChild(thText5);
+            th6.appendChild(thText6);
+            th7.appendChild(thText7);
+            th8.appendChild(thText8);
+            th9.appendChild(thText9);
+
+            tr.appendChild(th1);
+            tr.appendChild(th2);
+            tr.appendChild(th3);
+            tr.appendChild(th4);
+            tr.appendChild(th5);
+            tr.appendChild(th6);
+            tr.appendChild(th7);
+            tr.appendChild(th8);
+            tr.appendChild(th9);
+
+            thead.appendChild(tr);
+            table.appendChild(thead);
+            appHandle.appendChild(table);
+
+            for(var i = 0; i < users.length; i++) {
+
+                var row = document.createElement('tr');
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                var td3 = document.createElement('td');
+                var td4 = document.createElement('td');
+                var td5 = document.createElement('td');
+                var td6 = document.createElement('td');
+                var td7 = document.createElement('td');
+                var td8 = document.createElement('td');
+                var td9 = document.createElement('td');
+
+                var tdText1 = document.createTextNode(`${users[i].id}`);
+                var tdText2 = document.createTextNode(`${users[i].name}`);
+                var tdText3 = document.createTextNode(`${users[i].username}`);
+                var tdText4 = document.createTextNode(`${users[i].email}`);
+                var tdText5 = document.createTextNode(`${users[i].address.street}, ${users[i].address.suite}, ${users[i].address.city}`);
+                var tdText6 = document.createTextNode(`${users[i].address.zipcode}`);
+                var tdText7 = document.createTextNode(`${users[i].phone}`);
+                var tdText8 = document.createTextNode(`${users[i].website}`);
+                var tdText9 = document.createTextNode(`${users[i].company.name}`);
+
+                td1.appendChild(tdText1);
+                td2.appendChild(tdText2);
+                td3.appendChild(tdText3);
+                td4.appendChild(tdText4);
+                td5.appendChild(tdText5);
+                td6.appendChild(tdText6);
+                td7.appendChild(tdText7);
+                td8.appendChild(tdText8);
+                td9.appendChild(tdText9);
+
+                row.appendChild(td1);
+                row.appendChild(td2);
+                row.appendChild(td3);
+                row.appendChild(td4);
+                row.appendChild(td5);
+                row.appendChild(td6);
+                row.appendChild(td7);
+                row.appendChild(td8);
+                row.appendChild(td9);
+
+                tbody.appendChild(row);
+            }
+            table.appendChild(tbody);
+            appHandle.appendChild(table);
+            // console.log(appHandle);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    </script>
+</body>
+</html>

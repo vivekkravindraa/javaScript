@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Product Listing</title>
+</head>
+<body>
+    <h2 align="center">PRODUCTS LIST</h2> 
+    <div id="app">
+
+    </div>
+    <script>  
+        
+        var products = [
+            {
+                id: 306,
+                name: "Incredible Linen Clock",
+                price: 200,
+                category: "Games",
+                cod: false,
+                stock: 85,
+                url: "http://dct-api-data.herokuapp.com/products/306.json"
+            },
+            {
+                id: 307,
+                name: "Rustic Leather Wallet",
+                price: 1600,
+                category: "Beauty",
+                cod: false,
+                stock: 82,
+                url: "http://dct-api-data.herokuapp.com/products/307.json"
+            },
+            {
+                id: 309,
+                name: "Gorgeous Plastic Hat",
+                price: 1900,
+                category: "Music",
+                cod: false,
+                stock: 100,
+                url: "http://dct-api-data.herokuapp.com/products/309.json"
+            },
+            {
+                id: 311,
+                name: "Gorgeous Cotton Shoes",
+                price: 200,
+                category: "Baby",
+                cod: true,
+                stock: 7,
+                url: "http://dct-api-data.herokuapp.com/products/311.json"
+            },
+            {
+                id: 312,
+                name: "Practical Cotton Shirt",
+                price: 2000,
+                category: "Industrial",
+                cod: true,
+                stock: 58,
+                url: "http://dct-api-data.herokuapp.com/products/312.json"
+            },
+            {
+                id: 313,
+                name: "Mediocre Leather Lamp",
+                price: 2700,
+                category: "Books",
+                cod: false,
+                stock: 1,
+                url: "http://dct-api-data.herokuapp.com/products/313.json"
+            }
+        ]
+        
+        var appHandle = document.getElementById('app');
+        
+        var ol = document.createElement('ol'); 
+
+        for(var i = 0; i < products.length; i++) {
+
+            var li = document.createElement('li');
+            li.setAttribute('type','A');
+
+            var text = document.createTextNode(
+                `id: ${products[i].id},
+                name: ${products[i].name},
+                price: ${products[i].price},
+                category: ${products[i].category},
+                cod: ${products[i].cod},
+                stock: ${products[i].stock},
+                url: ${products[i].url}`
+            );
+            
+            li.appendChild(text);
+            ol.appendChild(li);
+            appHandle.appendChild(ol);
+        }
+    </script>
+</body>
+</html>

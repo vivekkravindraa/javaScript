@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Split</title>
+</head>
+<body>
+    <h2 id="name">js,rb,node,py,php</h2>
+    <button id="nameBtn">Click ME!</button>
+    <h2 id="result"></h2>
+    <script>
+        var nameHandle = document.getElementById('name');
+        var nameBtnHandle = document.getElementById('nameBtn');
+        // var resultHandle = document.getElementById('result');
+        nameBtnHandle.addEventListener('click',function(){
+            console.log(document.getElementById('result').innerHTML = nameHandle.innerHTML.split(','));
+        },false);
+    </script>
+</body>
+</html>

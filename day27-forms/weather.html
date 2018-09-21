@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Weather Predict</title>
+</head>
+<body>
+    <h2> See The Temperature In The Given Cities </h2>
+
+    <label>City :</label>
+    <select id="city">
+        <option value="">Select City</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="mysore">Mysore</option>
+        <option value="tumkur">Tumkur</option>
+        <option value="mangalore">Mangalore</option>
+        <option value="hubli">Hubli</option>
+    </select>
+    <h2 id="output"></h2>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script>
+        var cityHandle = document.getElementById('city');
+        var outputHandle = document.getElementById('output');
+
+        cityHandle.addEventListener('change',function() {
+            var userInput = cityHandle.value;
+
+            var url = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=c5367a1e9557ba7a5b81fabe81f51da3&units=metric`;
+            
+            axios.get(url)
+            .then(function(response) {
+                outputHandle.innerHTML = `${response.data.main.temp}`;
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+        },false);
+    </script>
+</body>
+</html>

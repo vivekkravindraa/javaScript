@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Gender Predict</title>
+</head>
+<body>
+    <h2> Enter A Name We'll Tell You The Gender!</h2>
+    <input type="text" id="name"></input>
+    <button id="btn">Click Here!</button>
+    <h2 id="output"></h2>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var nameHandle = document.getElementById('name');
+        var btnHandle = document.getElementById('btn');
+        var outputHandle = document.getElementById('output');
+
+        btnHandle.addEventListener('click',function() {
+            var userInput = nameHandle.value;
+            if(userInput === '') {
+                console.log('Name Can Not Be Blank');
+            } else {
+                var url = `https://gender-api.com/get?name=${userInput}&key=wubmUMBbjXXCSpQrnP`;
+                axios.get(url)
+                .then(function(response) {
+                    outputHandle.innerHTML = `${response.data.gender}`;
+                })
+                .catch(function(error) {
+                });
+            }
+        },false);
+    </script>
+</body>
+</html>

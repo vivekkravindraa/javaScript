@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Social Media</title>
+</head>
+<body>
+    My Social Media Links
+    <ul id="myLinks">
+        <!-- <li><a href="http://www.dctacademy.com">Website</a></li> -->
+    </ul>
+    <script>
+        var links = [
+            {
+                title: 'Website',
+                url: 'http://www.dctacademy.com'
+            },
+            {
+                title: 'Facebook',
+                url: 'http://facebook.com/dctacademy.bangalore'
+            },
+            {
+                title: 'GitHub',
+                url: 'http://github.com/dctacademy'
+            }
+        ];
+        var myLinksHandle = document.getElementById('myLinks');
+        
+        links.forEach(function(link) {
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            var text = document.createTextNode(link.title);
+            // var h = document.createAttribute('href');
+            // h.value = `${link.url}`;
+            // a.setAttributeNode(h);
+            a.setAttribute('href',link.url);
+            a.setAttribute('target','_blank');
+            a.appendChild(text);
+            li.appendChild(a);
+            myLinksHandle.appendChild(li);
+        });
+    </script>
+</body>
+</html>

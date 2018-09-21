@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String</title>
+</head>
+<body>
+    <!-- h2 is a tag, id is an attribute -->
+    <h1 id="name">dct academy</h1>
+    <button id="nameBtn">Click Here!</button>
+
+    <h1 id="name1">BANGALORE</h1>
+    <button id="nameBtn1">Click Here!</button>
+
+    <script>
+        var nameHandle = document.getElementById('name');
+        var nameBtnHandle = document.getElementById('nameBtn');
+        // console.log(document);
+
+        // console.log(nameHandle);
+        // console.log(typeof nameHandle);
+        // console.log(nameHandle.innerHTML.toUpperCase());
+
+        // console.log(nameBtnHandle);
+        // console.log(typeof nameBtnHandle);
+        // console.log(nameBtnHandle.innerHTML.toUpperCase());
+
+        // Event Handler
+        nameBtnHandle.addEventListener('click', function(){
+            // var presentText = nameHandle.innerHTML;
+            // var transformedText = presentText.toUpperCase();
+            // nameHandle.innerHTML = transformedText;
+            nameHandle.innerHTML = nameHandle.innerHTML.toUpperCase();
+        }, false)
+
+        var name1Handle = document.getElementById('name1');
+        var nameBtn1Handle = document.getElementById('nameBtn1');
+
+        nameBtn1Handle.addEventListener('click',function(){
+            name1Handle.innerHTML = name1Handle.innerHTML.toLowerCase();
+        }, false)
+    </script>
+</body>
+</html>

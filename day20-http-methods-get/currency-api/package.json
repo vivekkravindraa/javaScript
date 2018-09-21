@@ -1,0 +1,14 @@
+{
+  "name": "currency-api",
+  "version": "1.0.0",
+  "description": "to display currency conventions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vivek",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

@@ -1,0 +1,1 @@
+// functions will always be at the top, though they're written at the bottom of the file

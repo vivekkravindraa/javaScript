@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form  Elements</title>
+</head>
+<body>
+    <center>
+        <form id="enquiryForm">
+            <h2>ENQUIRY FORM</h2>
+
+            <label for="Name">Name :</label>
+            <input type="text" name="name" id="Name"/>
+            <br/>
+
+            <!-- name="name" -> Unique Identifier, sent in URL -->
+
+            <label for="Mobile">Mobile :</label>
+            <input type="text" name="mobile" id="Mobile"/>
+            <br/>
+            
+            <label for="Email">Email :</label>
+            <input type="text" name="email" id="Email"/>
+            <br/>
+            
+            <!-- DOB is supported only in chrome -->
+            <label for="Dob">DOB :</label>
+            <input type="date" name="dob" id="Dob" />
+            <br/>
+
+            <label>Gender :</label>
+            <input type="radio" name="gender" value="male" id="Male" />
+            <label for="Male">Male</label>
+            <input type="radio" name="gender" value="female" id="Female" />
+            <label for="Female">Female</label>
+            <br/>
+
+            <label for="Languages">Languages :</label>
+            <select name="languages" id="Languages">
+                <option value="js">Javascript</option>
+                <option value="rb">Ruby</option>
+                <option value="py">Python</option>        
+            </select>
+            <br/>
+
+            <label for="Courses">Courses :</label>
+            <select name="courses" id="Courses">
+                    <option value="mern">MERN</option>
+                    <option value="react">React</option>
+                    <option value="node">Node</option>
+                    <option value="django">Python + Django</option>
+                    <option value="ror">Ruby On Rails</option>
+            </select>
+            <br/>
+
+            <label>Preference:</label>
+            <input type="radio" name="preference" value="weekdays" id="Weekdays" />
+            <label for="Weekdays">Weekdays</label>
+            <input type="radio" name="preference" value="weekends" id="Weekends"/>
+            <label for="Weekends">Weekends</label>
+            <br/>
+
+            <label for="Experience">Experience :</label>
+            <input type="number" min="0" max="15" id="Experience"/>
+            <br/>
+
+            <label for="About">Tell Us About Yourself :</label>
+            <textarea name="about" id="About"></textarea>
+            <br/>
+
+            <input type="checkbox" id="Checkbox" />
+            <label for="Checkbox">I Grant Permission To Contact Me</label>
+            <br/>
+
+            <input type="submit" value="Submit to Enquire" />
+            <br/>
+        </form> 
+    </center>
+
+    <script>
+        var nameHandle = document.getElementById('Name');
+        var mobileHandle = document.getElementById('Mobile');
+        var emailHandle = document.getElementById('Email');
+        var aboutHandle = document.getElementById('About');
+
+        var maleHandle = document.getElementById('Male');
+        var femaleHandle = document.getElementById('Female');
+
+        var weekdayHandle = document.getElementById('Weekdays');
+        var weekendHandle = document.getElementById('Weekends');
+
+        var languageHandle = document.getElementById('Languages');
+
+        nameHandle.addEventListener('focus',function(){
+            console.log('Inside The Text Field');
+        },false);
+
+        nameHandle.addEventListener('blur',function(){
+            console.log('Outside The Text Field');
+            console.log('You Typed ' + nameHandle.value);
+        },false);
+
+        mobileHandle.addEventListener('focus',function(){
+            console.log('Inside The Text Field');
+        },false);
+        mobileHandle.addEventListener('blur',function(){
+            console.log('Outside The Text Field');
+            console.log('You Typed ' + mobileHandle.value);
+        },false);
+
+        emailHandle.addEventListener('focus',function(){
+            console.log('Inside The Text Field');
+        },false);
+        emailHandle.addEventListener('blur',function(){
+            console.log('Outside The Text Field');
+            console.log('You Typed ' + emailHandle.value);
+        },false);
+
+        aboutHandle.addEventListener('focus',function(){
+            console.log('Inside The Text Field');
+        },false);
+        aboutHandle.addEventListener('blur',function(){
+            console.log('Outside The Text Field');
+            console.log('You Typed ' + aboutHandle.value);
+        },false);
+
+        languageHandle.addEventListener('focus',function(){
+            console.log('Inside The Dropdown');
+        },false);
+        languageHandle.addEventListener('blur',function(){
+            console.log('Outside The Dropdown');
+            // console.log('You Selected ' + languageHandle.value);
+        },false);
+
+        languageHandle.addEventListener('change',function(){
+            console.log('You Selected ' + languageHandle.value);
+        },false);
+
+        maleHandle.addEventListener('click',function(){
+            console.log('You Selected ', maleHandle.value);
+        },false);
+        femaleHandle.addEventListener('click',function(){
+            console.log('You Selected', femaleHandle.value);
+        },false);
+
+        weekdayHandle.addEventListener('click',function(){
+            console.log('You Selected', weekdayHandle.value);
+        },false);
+        weekendHandle.addEventListener('click',function(){
+            console.log('You Selected', weekendHandle.value);
+        },false);
+
+    </script>
+</body>
+</html>

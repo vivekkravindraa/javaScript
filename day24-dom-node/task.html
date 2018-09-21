@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task List</title>
+</head>
+<body>
+
+    <h2>My Task List</h2>
+    <ul id="myTasks"> </ul>
+
+    <script>
+        var taskHandle = document.getElementById('myTasks');
+
+        var task1 = "get groceries";
+        var task2 = "meet grand parents";
+
+        // var liFirst = document.createElement('li');         // creates <li> </li>
+        // var liFirstText = document.createTextNode(task1);   // includes "get grocies" inside a <li>
+
+        // liFirst.appendChild(liFirstText);                   // <li>get groceries</li>
+        // taskHandle.appendChild(liFirst);                    // <ul><li> . . . </li></ul>
+
+        // var liSecond = document.createElement('li');        // creates <li> </li>
+        // var liSecondText = document.createTextNode(task2);  // includes "meet grand parents" inside a <li>
+
+        // liSecond.appendChild(liSecondText);                 // <li>meet grand parents</li>
+        // taskHandle.appendChild(liSecond);                   // <ul><li> . . . </li></ul>
+
+        var tasks = [];
+        tasks.push(task1,task2);
+
+        tasks.forEach(function(task) {
+            var li = document.createElement('li');
+            var text = document.createTextNode(task);
+            li.appendChild(text);
+            taskHandle.appendChild(li);
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Generate Tags </title>
+</head>
+<body>
+    <label for="text"> Enter text here: </label>
+    <input type="text" id="text" />
+    <br />
+    <select id="select">
+        <option value="">Select Below</option>
+        <option value="h1"> H1 </option>
+        <option value="h2"> H2 </option>
+        <option value="p"> P </option>
+        <option value="b"> B </option>
+        <option value="em"> EM </option>
+    </select>
+    <button id="btn"> Generate Tags </button>
+    <div id="output"> </div>
+
+    <script>
+
+        let textHandle = document.getElementById('text');
+        let selectHandle = document.getElementById('select');
+        let btnHandle = document.getElementById('btn');
+        let ouputHandle = document.getElementById('output');
+
+        btnHandle.addEventListener('click',function(){
+            let tag = document.createElement(selectHandle.value);
+            tag.innerHTML = textHandle.value;
+            ouputHandle.appendChild(tag);
+        },false);
+
+    </script>
+
+</body>
+</html>

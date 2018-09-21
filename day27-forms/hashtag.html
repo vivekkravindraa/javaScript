@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>HashTag</title>
+</head>
+<body>
+    <h2 id="generator">HashTag Generator</h2>
+    <input id="sentence" type="text" />
+    <button id="button">Generate Button</button>
+    <h2 id="output"></h2>
+
+    <script>
+        var generatorHandle = document.getElementById('generator');
+        var sentenceHandle = document.getElementById('sentence');
+        var buttonHandle = document.getElementById('button');
+        var outputHandle = document.getElementById('output');
+
+        buttonHandle.addEventListener('click',function(){
+            var input = sentenceHandle.value;
+            if(input === '') {
+                outputHandle.innerHTML = 'Can\'t Be Blank';
+            } else {
+                var output = '#';
+                var words = input.split(' ');
+                words.forEach(function(word) {
+                    output = output + word.charAt(0).toUpperCase() + word.slice(1);
+                });
+                sentenceHandle.value = '';
+                outputHandle.innerHTML = output;
+            }
+        },false);
+    </script>
+</body>
+</html>

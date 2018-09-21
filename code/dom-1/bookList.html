@@ -1,0 +1,116 @@
+<!-- The Book List
+Keep track of which books you read and which books you want to read!
+
+Create a webpage with an h1 of "My Book List".
+Add a script tag to the bottom of the page, where all your JS will go.
+var books = [
+        {
+            title: 'The Design of EveryDay Things',
+            img: 'http://ecx.images-amazon.com/images/I/41j2ODGkJDL._AA115_.jpg',
+            author: 'Don Norman',
+            alreadyRead: false
+        },
+        {
+            title: 'The Most Human Human',
+            img: 'http://ecx.images-amazon.com/images/I/41Z56GwEv9L._AA115_.jpg',
+            author: 'Brian Christian',
+            alreadyRead: true
+        }];
+
+Iterate through the array of books. For each book, create a p element with the book title and author and append it to the page.
+Use a ul and li to display the books.
+Add a property to each book with the URL of the book cover, and add an img element for each book on the page.
+Change the style of the book depending on whether you have read it or not. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book List</title>
+    <style>
+        body {
+            background-color: orange;
+        }
+        img {
+            border: 4px solid black;
+            border-radius: 20px;
+            /* width: 150px;
+            max-width: 100%;
+            height: auto; */
+        }
+    </style>
+</head>
+<body>
+    <h1>BOOK LIST</h1>
+    <div id="app">
+
+    </div>
+    <script>
+        var appHandle = document.getElementById('app');
+        var ul = document.createElement('ul');
+
+        var books = [
+                        {title: 'The Design of EveryDay Things',
+                        img: 'http://ecx.images-amazon.com/images/I/41j2ODGkJDL._AA115_.jpg',
+                        author: 'Don Norman',
+                        alreadyRead: false
+                        },
+                        {title: 'The Most Human Human',
+                        img: 'http://ecx.images-amazon.com/images/I/41Z56GwEv9L._AA115_.jpg',
+                        author: 'Brian Christian',
+                        alreadyRead: true
+                        }
+                    ];
+            
+        books.forEach(function(book) {
+            
+            var li = document.createElement('li');
+            
+            var para1 = document.createElement('p');
+            var title = document.createTextNode(`Title: ${book.title}`);
+
+            var para2 = document.createElement('p');
+            var author = document.createTextNode(`Author: ${book.author}`);
+
+            var image = document.createElement('img');
+            image.setAttribute('src',`${book.img}`);
+            image.setAttribute('height','100px');
+            image.setAttribute('width','100px')
+
+            para1.appendChild(title);
+            para2.appendChild(author);
+
+            li.appendChild(para1);
+            li.appendChild(para2);
+            li.appendChild(image);
+
+            ul.appendChild(li);
+
+        });
+        appHandle.appendChild(ul);
+
+        var bookImgHandle = document.getElementsByTagName('img');
+
+        function onImage() {
+            bookImgHandle.setAttribute('height','150px');
+            bookImgHandle.setAttribute('width','150px');
+        }
+
+        function offImage() {
+            bookImgHandle.setAttribute('height','70px');
+            bookImgHandle.setAttribute('width','70px');
+        }
+        
+        bookImgHandle.addEventListener('mouseover',function() {
+            onImage();
+        },false);
+        
+        bookImgHandle.addEventListener('mouseout',function() {
+            offImage();
+        },false);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<html>
+<head>
+    <title>Products Table</title>
+</head>
+<body>
+    <h2 align="center">PRODUCTS TABLE</h2> 
+    <div id="app">
+
+    </div>
+    <script>
+        var appHandle = document.getElementById('app');
+        
+        var products = [
+            {
+                id: 306,
+                name: "Incredible Linen Clock",
+                price: 200,
+                category: "Games",
+                cod: false,
+                stock: 85,
+                url: "http://dct-api-data.herokuapp.com/products/306.json"
+            },
+            {
+                id: 307,
+                name: "Rustic Leather Wallet",
+                price: 1600,
+                category: "Beauty",
+                cod: false,
+                stock: 82,
+                url: "http://dct-api-data.herokuapp.com/products/307.json"
+            },
+            {
+                id: 309,
+                name: "Gorgeous Plastic Hat",
+                price: 1900,
+                category: "Music",
+                cod: false,
+                stock: 100,
+                url: "http://dct-api-data.herokuapp.com/products/309.json"
+            },
+            {
+                id: 311,
+                name: "Gorgeous Cotton Shoes",
+                price: 200,
+                category: "Baby",
+                cod: true,
+                stock: 7,
+                url: "http://dct-api-data.herokuapp.com/products/311.json"
+            },
+            {
+                id: 312,
+                name: "Practical Cotton Shirt",
+                price: 2000,
+                category: "Industrial",
+                cod: true,
+                stock: 58,
+                url: "http://dct-api-data.herokuapp.com/products/312.json"
+            },
+            {
+                id: 313,
+                name: "Mediocre Leather Lamp",
+                price: 2700,
+                category: "Books",
+                cod: false,
+                stock: 1,
+                url: "http://dct-api-data.herokuapp.com/products/313.json"
+            }
+        ]
+
+        var center = document.createElement('center');
+
+        var table = document.createElement('table');
+        table.setAttribute('border','1');
+        var thead = document.createElement('thead');
+        var tbody = document.createElement('tbody');
+        
+        var tr = document.createElement('tr');
+        var th1 = document.createElement('th');
+        var th2 = document.createElement('th');
+        var th3 = document.createElement('th');
+        var th4 = document.createElement('th');
+        var th5 = document.createElement('th');
+        var th6 = document.createElement('th');
+        var th7 = document.createElement('th');
+
+        var thData1 = document.createTextNode('ID NUMBER');
+        var thData2 = document.createTextNode('PRODUCT NAME');
+        var thData3 = document.createTextNode('PRICE');
+        var thData4 = document.createTextNode('CATEGOTY');
+        var thData5 = document.createTextNode('COD');
+        var thData6 = document.createTextNode('STOCK');
+        var thData7 = document.createTextNode('URL');
+
+        for(var i = 0; i < products.length; i++) {
+            var row = document.createElement('tr');
+
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            var td5 = document.createElement('td');
+            var td6 = document.createElement('td');
+            var td7 = document.createElement('td');
+
+            var tdData1 = document.createTextNode(`${products[i].id}`);
+            var tdData2 = document.createTextNode(`${products[i].name}`);
+            var tdData3 = document.createTextNode(`${products[i].price}`);
+            var tdData4 = document.createTextNode(`${products[i].category}`);
+            var tdData5 = document.createTextNode(`${products[i].cod}`);
+            var tdData6 = document.createTextNode(`${products[i].stock}`);
+            var tdData7 = document.createTextNode(`${products[i].url}`);
+
+            var a = document.createElement('a');
+            a.setAttribute('href',products[i].url);
+
+            td1.appendChild(tdData1);
+            td2.appendChild(tdData2);
+            td3.appendChild(tdData3);
+            td4.appendChild(tdData4);
+            td5.appendChild(tdData5);
+            td6.appendChild(tdData6);
+            
+            // td7.appendChild(tdData7);
+            a.appendChild(tdData7);
+            td7.appendChild(a);
+            
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            row.appendChild(td4);
+            row.appendChild(td5);
+            row.appendChild(td6);
+            row.appendChild(td7);
+            tbody.appendChild(row);
+        }
+
+        th1.appendChild(thData1);
+        th2.appendChild(thData2);
+        th3.appendChild(thData3);
+        th4.appendChild(thData4);
+        th5.appendChild(thData5);
+        th6.appendChild(thData6);
+        th7.appendChild(thData7);
+
+        tr.appendChild(th1);
+        tr.appendChild(th2);
+        tr.appendChild(th3);
+        tr.appendChild(th4);
+        tr.appendChild(th5);
+        tr.appendChild(th6);
+        tr.appendChild(th7);
+        thead.appendChild(tr);
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        center.appendChild(table);
+        appHandle.appendChild(center);
+
+        console.log(appHandle);
+    </script>
+</body>
+</html>

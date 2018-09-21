@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Count Up Then Down</title>
+</head>
+<body>
+
+    <h2> Count <h2>
+    <h2 id="countValue"></h2>
+    <button id="countUpBtn">Count Up</button>
+    <button id="countDownBtn">Count Down</button>
+
+    <script>
+        var count = 0;
+        var countValueHandle = document.getElementById('countValue');
+        var countUpBtnHandle = document.getElementById('countUpBtn');
+        var countDownBtnHandle = document.getElementById('countDownBtn');
+
+        countUpBtnHandle.addEventListener('click',function(){
+            count++;
+            countValueHandle.innerHTML = count;
+        },false);
+
+        countDownBtnHandle.addEventListener('click',function(){
+            if(count < 1){
+                count++;
+            }
+            count--;
+            countValueHandle.innerHTML = count;
+        },false);
+    </script>
+
+</body>
+</html>

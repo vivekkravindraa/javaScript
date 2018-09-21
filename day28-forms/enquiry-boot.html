@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CDN for CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+    <title>Enquiry Form</title>
+</head>
+
+<body class="p-3 mb-2 bg-warning text-dark">
+    <!-- Bootstrap CDN for Optional JS, Jquery & Bootstrap JS  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <div class="alert alert-primary" role="alert">
+        <div class="text-center">
+            Fill the Enquiry Form OR <a href="#" class="alert-link">Click Here</a> to Download!
+        </div>
+    </div>
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-3">    
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" placeholder="Enter First Name">
+            </div>
+            
+            <div class="form-group col-md-3">
+                <label for="name">Last Name</label>
+                <input type="text" class="form-control" placeholder="Enter Last Name">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email">
+            </div>
+            
+            <div class="form-group col-md-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter Password">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="languages">Select Language</label>
+                <select class="form-control" id="languages">
+                    <option>Select Language..</option>
+                    <option>Javascript</option>
+                    <option>Ruby</option>
+                    <option>Python And Django</option>
+                    <option>React Js</option>
+                    <option>Angular Js</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="preference">Preference</label>
+                <select class="custom-select" class="form-control" id="preference">
+                    <option selected>Choose..</option>
+                    <option value="1">MERN</option>
+                    <option value="2">MEAN</option>
+                    <option value="3">RUBY</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="textarea">Tell Us About Yourself</label>
+                <textarea class="form-control" id="textarea" rows="3" placeholder="Write Here..."></textarea>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="file">Upload CV</label>
+                <input type="file" class="form-control" id="file">
+            </div>
+        </div>
+
+        <div class="form-row">
+        <div class="form-group col-md-3">
+            <div>
+                <label>Select Type</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="graduate" value="option1" checked>
+                <label class="form-check-label" for="graduate">Graduate</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="experienced" value="option2">
+                <label class="form-check-label" for="experienced">Experienced</label>
+            </div>
+        </div>
+
+        <div class="form-group col-md-3">
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="checkbox">
+                <label class="form-check-label" for="checkbox">I agree to the terms and conditions</label>                
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit Details</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
